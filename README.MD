@@ -34,7 +34,7 @@ O projeto não hospeda conteúdo, não funciona como serviço online e não ofer
 
 | 🇧🇷 Português (principal) | 🌍 English (international) |
 |--------------------------|-----------------------------|
-| 📘 [README.pt-BR.md](README.pt-BR.md) | 📘 [README.en.md](README.en.md) |
+| 📘 [README.pt-BR.md](README.pt-br.md) | 📘 [README.en.md](README.en.md) |
 | [Introdução](README.pt-BR.md#introducao) | [Introduction](README.en.md#introduction) |
 | [Funcionalidades](README.pt-BR.md#funcionalidades-estado-atual) | [Features](README.en.md#current-features) |
 | [Limitações](README.pt-BR.md#limitacoes-e-postura-do-projeto) | [Limitations](README.en.md#limitations-and-project-stance) |
