@@ -1,0 +1,18 @@
+Third-Party Components
+
+This project makes use of third-party components. The following list is
+provided for informational purposes only and does not replace or modify
+the original license texts.
+
+--------------------------------------------------
+
+Component: yt-dlp
+Website: https://github.com/yt-dlp/yt-dlp
+License: The Unlicense (Public Domain)
+
+License text:
+See file: yt-dlp.LICENCE
+
+--------------------------------------------------
+
+End of third-party notices.

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Live Cutter</title>
+    </head>
+    <body>
+        <header>
+            <h1>✂️LIVE CUTTER✂️</h1>
+        </header>
+
+        <form id="cut-form">
+            <label for="video-url">Url do Vídeo</label>
+            <input type="text", id="video-url", name="url" required>
+            <button type="submit">Carregar</button>
+        </form>
+    
+        <div id="player"></div>
+        <div id="controller">
+            <button type="button" id="start">início</button>
+            <button type="button" id="end">fim</button>
+        </div>
+        <div id="press_Start"></div>
+        <div id="Cortes">
+            <h2>Cortes Criados</h2>
+            <ul id="cut-list"></ul>
+        </div>
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>
