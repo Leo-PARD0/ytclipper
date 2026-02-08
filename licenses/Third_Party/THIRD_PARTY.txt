@@ -15,4 +15,15 @@ See file: yt-dlp.LICENCE
 
 --------------------------------------------------
 
+Component: FFmpeg
+Website: https://github.com/FFmpeg/FFmpeg
+License: LGPL v2.1
+
+License text:
+See file: COPYING.LGPLv2.1
+Reference:
+https://github.com/FFmpeg/FFmpeg/blob/master/COPYING.LGPLv2.1
+
+--------------------------------------------------
+
 End of third-party notices.

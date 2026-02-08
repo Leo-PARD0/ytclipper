@@ -10,6 +10,7 @@ from core.app_path import get_clipper_root, get_data_root, get_essentials # fun�
 cutter_dir = get_clipper_root()
 essentials = get_essentials()
 yt_dlp = essentials["yt-dlp.exe"]
+ffmpeg = essentials['ffmpeg.exe']
 
 
 # ===== Constantes de Pasta ===== 
@@ -27,7 +28,7 @@ def cortar_rapido(url, video_id, start, end):
     
     output_path = TMP_DIR / filename
 
-    comando = [str(yt_dlp), "--download-sections", clipe, "-o", str(output_path), url]
+    comando = [str(yt_dlp), "--ffmpeg-location", str(ffmpeg), "--download-sections", clipe, "-o", str(output_path), url]
     '''comando = [
         "yt-dlp",
         "-f", "bv+ba/b", # Pega o melhor vídeo e áudio independente da extensão

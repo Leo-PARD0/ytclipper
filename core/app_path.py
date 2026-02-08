@@ -27,7 +27,8 @@ def get_essentials():
     cutter = require_cutter()
 
     essentials = {
-        'yt-dlp.exe' : Path(cutter / 'essentials' / 'bin' / 'yt-dlp.exe')
+        'yt-dlp.exe' : Path(cutter / 'essentials' / 'bin' / 'yt-dlp.exe'),
+        'ffmpeg.exe' : Path(cutter / 'essentials' / 'bin' / 'ffmpeg.exe')
     }
     
     for nome, caminho in essentials.items():
