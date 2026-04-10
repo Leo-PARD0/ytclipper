@@ -1,3 +1,5 @@
+import { id_url } from "./process.js";
+
 document.addEventListener("DOMContentLoaded", function() {
     // ===== Variáveis globais =====
     const form = document.getElementById("cut-form");
@@ -31,12 +33,22 @@ document.addEventListener("DOMContentLoaded", function() {
     // ===== Função para marcar tempo =====
     function marcarTempo(){
         let time = null
-        if (player){
-            if(player.getPlayerState() === YT.PlayerState.PLAYING){
+        if (player && typeof player.getPlayerState === 'function'){
+            const state = player.getPlayerState(); 
+
+            let states = [
+                YT.PlayerState.PLAYING, // 1
+                YT.PlayerState.PAUSED, // 2
+                YT.PlayerState.BUFFERING // 3
+            ];
+
+            console.log(`Estado atual: ${state}`);
+            console.log(`Constantes: PLAYING=${YT.PlayerState.PLAYING}, PAUSED=${YT.PlayerState.PAUSED}`);
+            if(states.includes(state)){
                 time = player.getCurrentTime();
             }
             else{
-                alert("O player não está reproduzindo");
+                alert(`O player está no estado ${state}. Tente dar play primeiro.`);
             }
         }
         else{
@@ -50,14 +62,12 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
         const input_value = document.getElementById("video-url").value;
-        const url = input_value.split("v=");
-        let identificador = null;
 
-        if (url[1].includes("&")) {
-            identificador = url[1].split("&");
-            videoID = identificador[0];
-        } else {
-            videoID = url[1];
+        videoID = id_url(input_value);
+
+        if (videoID === "URL Inválida" || videoID === "Link não suportado") {
+            alert(videoID);
+            return;
         }
 
         console.log("Video ID:", videoID);

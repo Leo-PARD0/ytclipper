@@ -68,6 +68,29 @@ def cut():
     }) # Retorna com os dados da url
 
 if __name__ == "__main__":
+    import sys
+    import subprocess
+    from pathlib import Path
+
+    if __name__ == "__main__":
+        # Define o caminho do Python da venv (ex: .venv/Scripts/python.exe no Windows)
+        # .resolve() garante que o caminho seja absoluto para a comparação
+        venv_python = Path("venv/Scripts/python.exe").resolve()
+
+        # Obtém o caminho absoluto do interpretador que está rodando agora
+        current_python = Path(sys.executable).resolve()
+
+        # Verifica se não estamos na venv e se o executável da venv existe
+        if current_python != venv_python and venv_python.exists():
+            print(f"Redirecionando para a venv: {venv_python}")
+            
+            # Reinicia o script usando o Python da venv
+            # sys.argv mantém os argumentos passados originalmente
+            subprocess.run([str(venv_python)] + sys.argv)
+            sys.exit()
+
+        # Seu código principal a partir daqui
+        print(f"Executando com sucesso em: {sys.executable}")
     PORT = 5000
 
     if porta_em_uso(port=PORT):
